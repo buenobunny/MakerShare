@@ -15,6 +15,23 @@
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
 </head>
 <body>
   <!--================Header Menu Area =================-->
@@ -23,7 +40,7 @@
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img width="150px" src="img/MSlogo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -32,22 +49,21 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
-              <li class="nav-item submenu dropdown">
+              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class='nav-item submenu dropdown'>
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Listings</a>
-				  <ul class="dropdown-menu">
-					<li class="nav-item"><a class="nav-link" href="worker.html">Essential Worker</a></li>
-					<li class="nav-item"><a class="nav-link" href="member.html">Community Member</a></li>
-				  </ul>
-				</li>
-              <li class="nav-item active"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="worker.html">Essential Worker</a></li>
+                <li class="nav-item"><a class="nav-link" href="member.html">Community Member</a></li>
+              </ul>
+              <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
               <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
 
             <ul class="navbar-right">
               <li class="nav-item">
-				  <a href="login.html" class="button button-header bg">Sign up</a>
+                <button class="button button-header bg">Sign up</button>
               </li>
             </ul>
           </div> 
@@ -55,35 +71,25 @@
       </nav>
     </div>
   </header>
-  </header>
-
   <!--================Header Menu Area =================-->
 
-
-  <main class="side-main">
-    <!--================ Hero sm Banner start =================-->
-    <section class="hero-banner mb-30px">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <div class="hero-banner__img">
-              <img class="img-fluid" src="img/banner/LeaderBoard.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-5 pt-5">
-            <div class="hero-banner__content">
-              <h1>LEADERBOARD</h1>
-             <p>Community Members gain points whenever they give product or services to essential workers. Compete with other community members to come up on top!</p> -->
-        <!--      <a class="button bg" href="#">Get Started Today!</a>   -->
-            </div>
-          </div>
-        </div>
+  <!--================ Hero sm Banner start =================-->      
+  <section class="hero-banner hero-banner--sm mb-30px">
+    <div class="container">
+      <div class="hero-banner--sm__content">
+        <h1>Leaderboard</h1>
+        <nav aria-label="breadcrumb" class="banner-breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Leaderboard</li>
+          </ol>
+        </nav>
       </div>
-    </section>
-    <!--================ Hero sm Banner end =================-->
+    </div>
+  </section>
+  <!--================ Hero sm Banner end =================-->
 
-    <!--================ Feature section start =================-->
-<!--
+    <!--================ Feature section start =================
     <section class="section-margin">
       <div class="container">
         <div class="section-intro pb-85px text-center">
@@ -123,9 +129,8 @@
           </div>
         </div>
       </div>
-    -->
     </section>
-    <!--================ Feature section end =================-->
+    ================ Feature section end =================-->
 
     <!--================ about section start =================
     <section class="section-padding--small bg-magnolia">
@@ -148,9 +153,8 @@
     </section>
     ================ about section end =================-->
 
-    <!--================ Offer section start =================-->
+    <!--================ Offer section start =================
     <section class="section-margin">
-<!--
       <div class="container">
         <div class="section-intro pb-85px text-center">
           <h2 class="section-intro__title">Essential Worker?</h2>
@@ -194,13 +198,11 @@
           </div>
         </div>
       </div>
-  -->
     </section>
-    <!--================ Offer section end =================-->
+    ================ Offer section end =================-->
 
-        <!--================ Offer section start =================-->
+        <!--================ Offer section start =================
         <section class="section-margin">
-  <!--
           <div class="container">
             <div class="section-intro pb-85px text-center">
               <h2 class="section-intro__title">Community Member?</h2>
@@ -240,13 +242,11 @@
               </div>
             </div>
           </div>
--->
         </section>
-        <!--================ Offer section end =================-->
+        ================ Offer section end =================-->
 
-    <!--================ Solution section start =================-->
+    <!--================ Solution section start =================
     <section class="section-padding--small bg-magnolia">
-  <!--
       <div class="container">
         <div class="row align-items-center pt-xl-3 pb-xl-5">
           <div class="col-lg-6">
@@ -262,35 +262,24 @@
           </div>
         </div>
       </div>
--->
     </section>
-    <!--================ Solution section end =================-->
+    ================ Solution section end =================-->
 
-    <!--================ Pricing section start =================
+    <!--================ Pricing section start =================-->
     <section class="section-margin">
       <div class="container">
         <div class="section-intro pb-85px text-center">
-          <h2 class="section-intro__title">About Us</h2>
-          <p class="section-intro__subtitle">The creators of Makershare. We are community members who are looking to help community members help essential workers.</p>
+          <h2 class="section-intro__title">Top Three Community Members</h2>
+          <p class="section-intro__subtitle">The community members that have generously donated their time and efforts to helping essential workers around the world!</p>
         </div>
 
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card text-center card-pricing">
               <div class="card-pricing__header">
-                <h4>Normal</h4>
-                <p>Attend only first day</p>
-                <h1 class="card-pricing__price"><span>$</span>45.00</h1>
-              </div>
-              <ul class="card-pricing__list">
-                <li><i class="ti-check"></i>Unlimited Entrance</li>
-                <li><i class="ti-check"></i>Comfortable Seat</li>
-                <li><i class="ti-check"></i>Paid Certificate</li>
-                <li class="unvalid"><i class="ti-close"></i>Day One Workshop</li>
-                <li class="unvalid"><i class="ti-close"></i>One Certificate</li>
-              </ul>
-              <div class="card-pricing__footer">
-                <button class="button button-light">Buy Now</button>
+                <h4>Alexander Parra</h4>
+                <p>California</p>
+                <h1 class="card-pricing__price">90 POINTS!</h1>
               </div>
             </div>
           </div>
@@ -298,19 +287,9 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card text-center card-pricing">
               <div class="card-pricing__header">
-                <h4>Advanced</h4>
-                <p>Attend only first day</p>
-                <h1 class="card-pricing__price"><span>$</span>55.00</h1>
-              </div>
-              <ul class="card-pricing__list">
-                <li><i class="ti-check"></i>Unlimited Entrance</li>
-                <li><i class="ti-check"></i>Comfortable Seat</li>
-                <li><i class="ti-check"></i>Paid Certificate</li>
-                <li class="unvalid"><i class="ti-close"></i>Day One Workshop</li>
-                <li class="unvalid"><i class="ti-close"></i>One Certificate</li>
-              </ul>
-              <div class="card-pricing__footer">
-                <button class="button button-light">Buy Now</button>
+                <h4>Araav Patel</h4>
+                <p>California</p>
+                <h1 class="card-pricing__price">85 POINTS!</h1>
               </div>
             </div>
           </div>
@@ -318,26 +297,53 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
             <div class="card text-center card-pricing">
               <div class="card-pricing__header">
-                <h4>Ultimate</h4>
-                <p>Attend only first day</p>
-                <h1 class="card-pricing__price"><span>$</span>65.00</h1>
-              </div>
-              <ul class="card-pricing__list">
-                <li><i class="ti-check"></i>Unlimited Entrance</li>
-                <li><i class="ti-check"></i>Comfortable Seat</li>
-                <li><i class="ti-check"></i>Paid Certificate</li>
-                <li class="unvalid"><i class="ti-close"></i>Day One Workshop</li>
-                <li class="unvalid"><i class="ti-close"></i>One Certificate</li>
-              </ul>
-              <div class="card-pricing__footer">
-                <button class="button button-light">Buy Now</button>
+                <h4>Ansh Verma</h4>
+                <p>California</p>
+                <h1 class="card-pricing__price">70 POINTS!</h1>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    ================ Pricing section end =================-->
+
+    <section class="section-margin">
+      <div class="container">
+        <table>
+          <tr>
+            <th>Community Member</th>
+            <th>Location</th>
+            <th>Points</th>
+          </tr>
+          <tr>
+            <td>John Doe</td>
+            <td>Kansas</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <td>Jane Doe</td>
+            <td>New York</td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>John Smith</td>
+            <td>California</td>
+            <td>52</td>
+          </tr>
+          <tr>
+            <td>Richard Roe</td>
+            <td>England</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>Florida</td>
+            <td>45</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!--================ Pricing section end =================-->
 
     <!--================ Testimonial section start =================-->
     <section class="section-padding bg-magnolia">
