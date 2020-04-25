@@ -1,1 +1,1 @@
-# HackNow2020
+# CalHacks2020
