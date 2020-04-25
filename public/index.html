@@ -453,6 +453,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Maker
 		</div>
 	</footer>
   <!-- ================ End footer Area ================= -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+	<script src="js/database-init.js"></script>
+	<script>
+	var user = firebase.auth().currentUser;
+	var name, email, photoUrl, uid, emailVerified;
+
+	if (user) {
+		name = user.displayName;
+		email = user.email;
+		photoUrl = user.photoURL;
+		emailVerified = user.emailVerified;
+		uid = user.uid;
+		document.getElementsByClassName("footer-text")[0].innerHTML = "SIGNED IN";
+	} else {
+		document.getElementsByClassName("footer-text")[0].innerHTML = "NOT SIGNED IN";
+	}
+	</script>
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
