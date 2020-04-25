@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Parason Software - Contact</title>
+  <title>MakerShare</title>
 	<link rel="icon" href="img/Fevicon.png" type="image/png">
 
   <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
@@ -32,18 +32,16 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="feature.html">Feature</a></li> 
-              <li class="nav-item"><a class="nav-link" href="pricing.html">Price</a>
-              <li class="nav-item submenu dropdown">
+              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class='nav-item submenu dropdown'>
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                  aria-expanded="false">Pages</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="blog-details.html">Blog Details</a></li>
-                </ul>
-							</li>
-              <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+                aria-expanded="false">Listings</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="worker.html">Essential Worker</a></li>
+                <li class="nav-item"><a class="nav-link" href="member.html">Community Member</a></li>
+              </ul>
+              <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
 
             <ul class="navbar-right">
@@ -76,8 +74,10 @@
 
   
   <!-- ================ contact section start ================= -->
+  
   <section class="section-margin">
     <div class="container">
+      <!--
       <div class="d-none d-sm-block mb-5 pb-4">
         <div id="map" style="height: 420px;"></div>
         <script>
@@ -100,11 +100,12 @@
               scrollwheel:  false
             });
           }
-          
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
         
+        </script>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
       </div>
+      -->
 
 
       <div class="row">
@@ -112,21 +113,21 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-              <h3>California United States</h3>
-              <p>Santa monica bullevard</p>
+              <h3>University of California, Berkeley</h3>
+              <p>Berkeley, California</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-headphone"></i></span>
             <div class="media-body">
-              <h3><a href="tel:454545654">00 (440) 9865 562</a></h3>
+              <h3><a href="tel:454545654">(800) MAKE-SHARE</a></h3>
               <p>Mon to Fri 9am to 6pm</p>
             </div>
           </div>
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3><a href="mailto:support@colorlib.com">support@colorlib.com</a></h3>
+              <h3><a href="mailto:TheMakerShare@gmail.com">TheMakerShare@gmail.com</a></h3>
               <p>Send us your query anytime!</p>
             </div>
           </div>
@@ -152,7 +153,7 @@
               </div>
             </div>
             <div class="form-group text-center text-md-right mt-3">
-              <button type="submit" class="button button-contactForm">Send Message</button>
+              <button type="submit" class="button button-contactForm"><a href="mailto:TheMakerShare@gmail.com">Send Message</a></button>
             </div>
           </form>
         </div>
