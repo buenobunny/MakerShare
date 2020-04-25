@@ -81,6 +81,17 @@
 	var uiConfig = {
 	  callbacks: {
 		signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+			var database = firebase.database();
+			var user = firebase.auth().currentUser;
+
+			if (user) {
+				database.ref('users/' + user.uid).set({
+					username: user.displayName,
+					photoLoc: user.photoUrl,
+					email: user.email
+				});
+			}
+			
 		  return true;
 		},
 		uiShown: function() {
@@ -88,7 +99,7 @@
 		}
 	  },
 	  signInFlow: 'popup',
-	  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+	  signInSuccessUrl: 'index.html',
 	  signInOptions: [
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 		firebase.auth.EmailAuthProvider.PROVIDER_ID,
