@@ -169,11 +169,14 @@ function setMarkers(map) {
 			var phone = document.createElement("p");
 			phone.innerHTML = "<dark>Phone Number:  </dark>" + childData["Phone"];
 			
+			var addy = document.createElement("p");
+			addy.innerHTML = "<dark>Pickup Address:  </dark>" + childData["Addy"];
 			
 			card.appendChild(titleText);
 			card.appendChild(description);
 			card.appendChild(email);
 			card.appendChild(phone);
+			card.appendChild(addy);
 			listings.appendChild(card);
 		});
 	});
