@@ -73,60 +73,39 @@
       </div>
     </div>
   </section>
-	  <div class="container">
-		  <form action="#" class="form-contact contact_form" id="contactForm" novalidate="novalidate">
-            <div class="row">
-              <div class="col-lg-5">
-                <div class="form-group">
-                  <input class="form-control" name="Username" id="Username" type="text" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="Email" id="Email" type="email" placeholder="Enter email address">
-                </div>
-                <div class="form-group">
-                  <input class="form-control" name="Phone" id="Phone" type="text" placeholder="Enter phone number">
-                </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="form-group">
-                    <textarea class="form-control different-control w-100" name="Desc" id="Desc" cols="30" rows="5" placeholder="Enter Description"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="form-group text-center text-md-right mt-3">
-              <button type="submit" class="button button-contactForm">Create Listing</button>
-            </div>
-          </form>
-	  </div>
+	  <section class="section-margin">
+		  <div class="container">
+			  <form class="form-contact contact_form" id="contactForm" novalidate="novalidate">
+				<div class="row">
+				  <div class="col-lg-5">
+					<div class="form-group">
+					  <input class="form-control" name="Username" id="Username" type="text" placeholder="Enter your name">
+					</div>
+					<div class="form-group">
+					  <input class="form-control" name="Email" id="Email" type="email" placeholder="Enter email address">
+					</div>
+					<div class="form-group">
+					  <input class="form-control" name="Phone" id="Phone" type="text" placeholder="Enter phone number">
+					</div>
+				  </div>
+				  <div class="col-lg-7">
+					<div class="form-group">
+						<textarea class="form-control different-control w-100" name="Desc" id="Desc" cols="30" rows="5" placeholder="Enter Description"></textarea>
+					</div>
+				  </div>
+				</div>
+				<div class="form-group text-center text-md-right mt-3">
+				  <button id="submit" type="submit" class="button button-contactForm">Create Listing</button>
+				</div>
+			  </form>
+		  </div>
+		</section>
     <!--================ Hero sm Banner end =================-->
 	</main>
     
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
-	<script>
-	var database = firebase.database();
-	var user = firebase.auth().currentUser;
-	var name, email, photoUrl, uid, emailVerified;
-	firebase.auth().onAuthStateChanged(user => {
-	  if (user) {
-		name = user.displayName;
-		email = user.email;
-		photoUrl = user.photoURL;
-		emailVerified = user.emailVerified;
-		uid = user.uid;
-		var userRef = database.ref('users/' + uid);
-			database.ref('users/' + uid).set({
-				username: name,
-				email: email,
-				photoLoc: photoUrl
-			});
-		  document.getElementById("loginButton").href="logout.html";
-		  document.getElementById("loginButton").innerHTML = "Logout";
-	  } else {
-		  window.location.href="index.html";
-	  }
-	});
-	</script>
+	
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
@@ -134,5 +113,37 @@
   <script src="js/jquery.ajaxchimp.min.js"></script>
   <script src="js/mail-script.js"></script>
   <script src="js/main.js"></script>
+	<script>
+	var database = firebase.database();
+	var ref = database.ref("Listings");
+	firebase.auth().onAuthStateChanged(user => {
+	  if (user) {
+		  document.getElementById("loginButton").href="logout.html";
+		  document.getElementById("loginButton").innerHTML = "Logout";
+	  } else {
+		  window.location.href="index.html";
+	  }
+	});
+	$("#contactForm").submit(function(e) {
+		e.preventDefault();
+		var form = $(this);
+		$("#submit").prop('disabled', true);
+		
+		var uname = $("#Username").val();
+		var ema = $("#Email").val();
+		var desc = $("#Desc").val();
+		var pho = $("#Phone").val();
+		
+		var newListing = ref.push();
+		newListing.set(JSON.parse(JSON.stringify({
+			'Username' : uname,
+			'Desc' : desc,
+			'Email': ema,
+			'Phone': pho
+		})));
+		window.location.href = "worker.html";
+		return null;
+	});
+	</script>
 </body>
 </html>

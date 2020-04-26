@@ -120,14 +120,13 @@
 		}
 	</style>
 		<div id="listings" class="container">
-			<a href="create-listing.html" class="button button-header" style="background-color: #21146a;">Create Listing</a>
+			<a href="create-listing.html" class="button button-contactForm">Create Listing</a>
 		</div>
 	
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
 	var database = firebase.database();
-	database.ref("test").set({value: "notthat"});
 	var snap = database.ref("Listings").limitToFirst(25);
 	var listings = document.getElementById("listings");
 	snap.once('value', function(snapshot) {
