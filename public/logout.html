@@ -1,19 +1,12 @@
 <!doctype html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
-
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
-	firebase.auth().signOut().then(function() {
+	firebase.auth().signOut().then(function(){
 		window.location.href = "index.html";
 	}, function(e) {
-		console.log("idk");
+		window.location.href = "index.html";
 	});
 	</script>
-<body>
-</body>
-</html>
+</head>

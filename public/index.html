@@ -270,17 +270,13 @@
 		emailVerified = user.emailVerified;
 		uid = user.uid;
 		var userRef = database.ref('users/' + uid);
-		if (!userRef) {
 			database.ref('users/' + uid).set({
 				username: name,
 				email: email,
 				photoLoc: photoUrl
 			});
-		}
 		  document.getElementById("loginButton").href="logout.html";
 		  document.getElementById("loginButton").innerHTML = "Logout";
-	  } else {
-		document.getElementsByClassName("nav-link")[0].innerHTML = "NOT SIGNED IN";
 	  }
 	});
 	</script>

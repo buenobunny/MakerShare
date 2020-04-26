@@ -98,7 +98,7 @@
 	};
 	firebase.auth().onAuthStateChanged(user => {
 		if (!user) {
-		ui.start('#firebaseui-auth-container', uiConfig);
+			ui.start('#firebaseui-auth-container', uiConfig);
 		}
 	});</script>
             </div>
