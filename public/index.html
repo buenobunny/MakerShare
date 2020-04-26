@@ -460,19 +460,29 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Maker
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
+	var database = firebase.database();
 	var user = firebase.auth().currentUser;
 	var name, email, photoUrl, uid, emailVerified;
-
-	if (user) {
+	firebase.auth().onAuthStateChanged(user => {
+	  if (user) {
 		name = user.displayName;
 		email = user.email;
 		photoUrl = user.photoURL;
 		emailVerified = user.emailVerified;
 		uid = user.uid;
-		document.getElementsByClassName("footer-text")[0].innerHTML = "SIGNED IN";
-	} else {
-		document.getElementsByClassName("footer-text")[0].innerHTML = "NOT SIGNED IN";
-	}
+		var userRef = database.ref('users/' + uid);
+		if (!userRef) {
+			database.ref('users/' + uid).set({
+				username: name,
+				email: email,
+				photoLoc: photoUrl
+			});
+		}
+		document.getElementsByClassName("nav-link")[0].innerHTML = "SIGNED IN";
+	  } else {
+		document.getElementsByClassName("nav-link")[0].innerHTML = "NOT SIGNED IN";
+	  }
+	});
 	</script>
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
