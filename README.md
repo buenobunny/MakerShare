@@ -14,7 +14,7 @@ We used Google's Firebase and Maps APIs for the backend construction. Namely, we
 
 ## Challenges
 
-Some challenges were incorporating the functionality of the Google Maps API effectively and in conjunction with the listings. Currently, it does not display the addresses of the listings because we did not have the resources or time to implement.
+Some challenges were incorporating the functionality of the Google Maps API effectively and in conjunction with the listings. Currently, it does not display the addresses of the listings because we did not have the resources or time to implement. Additionally, we were not able to fully incorporate a framework for accepting listings as of yet.
 
 ## Accomplishments that we are proud of
 
