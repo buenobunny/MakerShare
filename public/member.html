@@ -147,16 +147,54 @@ function setMarkers(map) {
         type="text/javascript"></script>
       </div>
   </section>
-  
-  
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+	<div id="listings" class="container">
+			<a href="create-request.html" class="button button-contactForm">Create Listing</a>
+		</div>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
+	var database = firebase.database();
+	var snap = database.ref("Requests").limitToFirst(25);
+	var listings = document.getElementById("listings");
 	firebase.auth().onAuthStateChanged(user => {
 	  if (user) {
 		  document.getElementById("loginButton").href="logout.html";
 		  document.getElementById("loginButton").innerHTML = "Logout";
-	  }});</script>
+	  }
+	});
+	snap.once('value', function(snapshot) {
+	  	snapshot.forEach(function(childSnapshot) {
+			var childKey = childSnapshot.key;
+			var childData = childSnapshot.val();
+			
+			var card = document.createElement("div");
+			card.classList.add("card");
+			
+			var titleText = document.createElement("h2");
+			titleText.innerHTML = childData["Username"];
+			
+			var description = document.createElement("p");
+			description.innerHTML = "<dark>" + childData["Desc"] + "</dark>";
+			
+			var email = document.createElement("p");
+			email.innerHTML = "<dark>Email:  </dark>" + childData["Email"];
+			
+			var phone = document.createElement("p");
+			phone.innerHTML = "<dark>Phone Number:  </dark>" + childData["Phone"];
+			
+			var addy = document.createElement("p");
+			addy.innerHTML = "<dark>Pickup Address:  </dark>" + childData["Addy"];
+			
+			card.appendChild(titleText);
+			card.appendChild(description);
+			card.appendChild(email);
+			card.appendChild(phone);
+			card.appendChild(addy);
+			listings.appendChild(card);
+		});
+	});
+	</script>
     <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="vendors/owl-carousel/owl.carousel.min.js"></script>

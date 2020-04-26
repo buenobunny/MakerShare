@@ -67,7 +67,7 @@
         <nav aria-label="breadcrumb" class="banner-breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Create Listing</li>
+            <li class="breadcrumb-item active" aria-current="page">Create Request</li>
           </ol>
         </nav>
       </div>
@@ -118,7 +118,7 @@
   <script src="js/main.js"></script>
 	<script>
 	var database = firebase.database();
-	var ref = database.ref("Listings");
+	var ref = database.ref("Requests");
 	firebase.auth().onAuthStateChanged(user => {
 	  if (user) {
 		  document.getElementById("loginButton").href="logout.html";
@@ -146,7 +146,7 @@
 			'Phone': pho,
 			'Addy': addy
 		})));
-		window.location.href = "worker.html";
+		window.location.href = "member.html";
 		return null;
 	});
 	</script>
