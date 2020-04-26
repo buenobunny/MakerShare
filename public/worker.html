@@ -71,43 +71,47 @@
       </div>
     </div>
   </section>
-	  <section class="section-margin">
+	<section class="section-margin">
+    <div class="container">
+      <div class="d-none d-sm-block mb-5 pb-4">
+        <div id="map" style="height: 840px;"></div>
+        <script>
+        function initMap() {
+          var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+          var mapOptions = {
+            zoom: 4,
+            center: myLatlng
+          }
+          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      
+          var image = document.createElement("img");
+          image.src = "img/banner/AnshPost.png";
+        //  var image = "public/img/AnshPost.png";
+      
+        //  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+          var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            icon: image
+          });
+      
+          // To add the marker to the map, call setMap();
+          marker.setMap(map);
+      
+      //    marker.setMap(null)
+      
+      
+      }
+      
+        </script>
+      
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq79w6dxRnDoHKnNvj5A0dYggMZ2Ah9pU&callback=initMap"
+        type="text/javascript"></script>
+      </div>
+    </div>
+  </section>
 
-<div class="d-none d-sm-block mb-5 pb-4">
-  <div id="map" style="height: 420px;"></div>
-  <script>
-  function initMap() {
-    var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-    var mapOptions = {
-      zoom: 4,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    var image = document.createElement("img");
-    image.src = "img/banner/AnshPost.png";
-  //  var image = "public/img/AnshPost.png";
-
-  //  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      icon: image
-    });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
-
-//    marker.setMap(null)
-
-
-}
-
-  </script>
-
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq79w6dxRnDoHKnNvj5A0dYggMZ2Ah9pU&callback=initMap"
-  type="text/javascript"></script>
-</div>
 
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
