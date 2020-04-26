@@ -47,7 +47,7 @@
 
             <ul class="navbar-right">
               <li class="nav-item">
-				  <a href="login.html" class="button button-header bg">Sign up</a>
+				  <a href="login.html" id="loginButton" class="button button-header bg">Sign up</a>
               </li>
             </ul>
           </div> 
@@ -149,6 +149,12 @@ function setMarkers(map) {
 	var database = firebase.database();
 	var snap = database.ref("Listings").limitToFirst(25);
 	var listings = document.getElementById("listings");
+	firebase.auth().onAuthStateChanged(user => {
+	  if (user) {
+		  document.getElementById("loginButton").href="logout.html";
+		  document.getElementById("loginButton").innerHTML = "Logout";
+	  }
+	});
 	snap.once('value', function(snapshot) {
 	  	snapshot.forEach(function(childSnapshot) {
 			var childKey = childSnapshot.key;

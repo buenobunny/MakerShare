@@ -64,7 +64,7 @@
 
             <ul class="navbar-right">
               <li class="nav-item">
-				  <a href="login.html" class="button button-header bg">Sign up</a>
+				  <a href="login.html" id="loginButton" class="button button-header bg">Sign up</a>
               </li>
             </ul>
           </div> 
@@ -166,6 +166,16 @@
         </table>
       </div>
     </section>
+	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+	<script src="js/database-init.js"></script>
+	<script>
+	firebase.auth().onAuthStateChanged(user => {
+	  if (user) {
+		  document.getElementById("loginButton").href="logout.html";
+		  document.getElementById("loginButton").innerHTML = "Logout";
+	  }
+	});
+	</script>
 
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
