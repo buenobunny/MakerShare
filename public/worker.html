@@ -71,56 +71,80 @@
       </div>
     </div>
   </section>
-	  <section class="section-margin">
-
+	  <section>
 <div class="d-none d-sm-block mb-5 pb-4">
   <div id="map" style="height: 420px;"></div>
-  <script>
-  function initMap() {
-    var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-    var mapOptions = {
-      zoom: 4,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	  <script>
+	  function initMap() {
+		var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+		var mapOptions = {
+		  zoom: 4,
+		  center: myLatlng
+		}
+		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-    var image = document.createElement("img");
-    image.src = "img/banner/AnshPost.png";
-  //  var image = "public/img/AnshPost.png";
+		var image = document.createElement("img");
+		image.src = "img/banner/AnshPost.png";
+	  //  var image = "public/img/AnshPost.png";
 
-  //  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      icon: image
-    });
+	  //  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+		var marker = new google.maps.Marker({
+		  position: myLatlng,
+		  map: map,
+		  icon: image
+		});
 
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
+		// To add the marker to the map, call setMap();
+		marker.setMap(map);
 
-//    marker.setMap(null)
+	//    marker.setMap(null)
 
 
-}
+	}
 
-  </script>
+	  </script>
 
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq79w6dxRnDoHKnNvj5A0dYggMZ2Ah9pU&callback=initMap"
-  type="text/javascript"></script>
-</div>
-
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq79w6dxRnDoHKnNvj5A0dYggMZ2Ah9pU&callback=initMap"
+	  type="text/javascript"></script>
+	</div>
+	</section>
+	<style>
+		.card {
+			margin: 20px;
+			padding: 20px;
+			box-shadow: 0 0 10px #000;
+		}
+	</style>
+		<div id="listings" class="container">
+			<div class="card">
+				<h2>
+				Test
+				</h2>
+				<p>
+				Description</p>
+			</div>
+		</div>
+	
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
 	var database = firebase.database();
 	database.ref("test").set({value: "notthat"});
 	var snap = database.ref("Listings").limitToFirst(25);
+	var listings = document.getElementById("listings");
 	snap.once('value', function(snapshot) {
-	  snapshot.forEach(function(childSnapshot) {
-		var childKey = childSnapshot.key;
-		var childData = childSnapshot.val();
-		  console.log(childKey + " " + JSON.stringify( childData));
-	  });
+	  	snapshot.forEach(function(childSnapshot) {
+			var childKey = childSnapshot.key;
+			var childData = childSnapshot.val();
+			var card = document.createElement("div");
+			card.classList.add("card");
+			var titleText = document.createElement("h2");
+			titleText.innerHTML = childData["Username"];
+			var description = document.createElement("p");
+			description.innerHTML = "test for rn";
+			card.appendChild(titleText);
+			listings.appendChild(card);
+		});
 	});
 	</script>
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
