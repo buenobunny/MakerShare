@@ -12,27 +12,28 @@ A user can log in as either an essential worker or a community member. After log
 
 We used Google's Firebase and Maps APIs for the backend construction. Namely, we used Firebase's hosting, authentication and database services. With the services we are able to put out the website, sign in users, and create listings for the community to interact with. We used the database's unique JSON formatting with Javascript to allow population of a listings page and the creation of new listings.
 
-For the front end development of this website, we utilized HTML, CSS, and JavaScript to build the web app.
+For the front end development, we utilized HTML, CSS, and JavaScript to build the web app.
 
 ## Challenges
 
-Some members had very little prior front-end development experience before this hackathon. Overcoming this challenge by spending time improving html, css, and javascript abilities to build the visual parts of our website was daunting, but a challenge we took on. Our well-designed, finished product is indicative of improvement in the front-end development related technical skills of our team. 
+Some members had very little prior front-end development experience before this hackathon. Though overcoming this challenge by improving our HTML, CSS, and JavaScript abilities was time-consuming, our well-designed, finished product is indicative of improvement in the front-end development related technical skills of our team. 
 
-Some other challenges were incorporating the functionality of the Google Maps API effectively and in conjunction with the listings. Currently, it does not display the addresses of the listings because we did not have the resources or time to implement. Additionally, we were not able to fully incorporate a framework for accepting listings as of yet.
+Some other challenges were incorporating the functionality of the Google Maps API effectively and in conjunction with the listings. Currently, it does not connect the addresses on the listings with markers on the Google Map because we did not have the resources or time to implement. Additionally, we were not able to fully incorporate a framework for accepting listings as of yet. However, we hope to accomplish these two tasks after the hackathon.
 
 ## Accomplishments that we are proud of
 
 Our team is proud of the front-end development knowledge gained throughout this hackathon; gaining a solid understanding of front end development has opened the array of projects we can create for the future. 
 
-Additionally, we are very proud of the idea we ended up creating to attack the difficulties COVID-19 has presented our society. We feel it is a novel solution with a lot of potential to genuinely aid essential workers by providing them with the materials that they need most. Following this hackathon, we plan to continue developing and improving upon the website, with hopes of launching it for the public to use as this pandemic continues. 
+Additionally, we are very proud of the idea we ended up creating to attack the difficulties COVID-19 has presented our society. We feel it is a novel solution with a lot of potential to genuinely aid essential workers by providing them with the materials that they need most. 
 
+Some of our team members did not have backend experience, and we are proud that we were able to learn how to incorporate Firebase with the hackathon's time constraint. We are now confident in our abilities to use Firebase on future projects. 
+
+Following this hackathon, we plan to continue developing and improving upon the website, with hopes of launching it for the public to use as this pandemic continues.
 
 ## What's next for MakerShare
 
 In an attempt to improve upon our current design, we plan to do the following: 
 
-1) We created the best design given the time constraints, but there is always room to improve. We would revamp our design; making it more intuitive, organized, and visually appealing for users. One example of this is making the visuals more relevant, and representative of the tasks (like making medical masks, food, etc) associated with what users will be doing while using MakerShare.
+1) We created the best design given the time constraints, but there is always room to improve. We would revamp our design, making it more intuitive, organized, and visually appealing for users. One example of this is incoporating images in the listing, including sample images like medical masks, gloves, disinfectant wipes, etc.
 
 2) Incorporate Facebook and Twitter API's for seamless sharing of MakerShare to social media platforms that will only increase the usage of MakerShare to benefit essential workers. 
-
-
