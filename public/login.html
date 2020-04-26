@@ -62,7 +62,7 @@
           </div>
           <div class="col-lg-5 pt-5">
             <div class="hero-banner__content">
-				<div id="loggedIn" class="hero-banner__content" display="none">
+				<div id="loggedIn" class="hero-banner__content">
 				  <h1>You're already logged in!</h1>
 				</div>
 				<div id="firebaseui-auth-container"></div>
@@ -99,6 +99,7 @@
 	firebase.auth().onAuthStateChanged(user => {
 		if (!user) {
 			ui.start('#firebaseui-auth-container', uiConfig);
+			document.getElementById("loggedIn").style.display = "none";
 		}
 	});</script>
             </div>

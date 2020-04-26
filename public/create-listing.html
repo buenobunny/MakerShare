@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
   <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
 
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!--================Header Menu Area =================-->
@@ -32,12 +32,12 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">Listings</a>
 				  <ul class="dropdown-menu">
-					<li class="nav-item active"><a class="nav-link" href="worker.html">Essential Worker</a></li>
+					<li class="nav-item"><a class="nav-link" href="worker.html">Essential Worker</a></li>
 					<li class="nav-item"><a class="nav-link" href="member.html">Community Member</a></li>
 				  </ul>
 				</li>
@@ -47,7 +47,7 @@
 
             <ul class="navbar-right">
               <li class="nav-item">
-				  <a href="login.html" class="button button-header bg">Sign up</a>
+				  <a href="login.html" id="loginButton" class="button button-header bg">Sign up</a>
               </li>
             </ul>
           </div> 
@@ -57,108 +57,77 @@
   </header>
   <!--================Header Menu Area =================-->
 
-  <!--================ Hero sm Banner start =================-->      
-  <section class="hero-banner hero-banner--sm mb-30px">
+
+  <main class="side-main">
+    <!--================ Hero sm Banner start =================-->      
+    <section class="hero-banner hero-banner--sm mb-30px">
     <div class="container">
       <div class="hero-banner--sm__content">
-        <h1>Listings</h1>
+        <h1>Create Listing</h1>
         <nav aria-label="breadcrumb" class="banner-breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Essential Worker</li>
+            <li class="breadcrumb-item active" aria-current="page">Create Listing</li>
           </ol>
         </nav>
       </div>
     </div>
   </section>
-	  <section>
-<div class="d-none d-sm-block mb-5 pb-4">
-  <div id="map" style="height: 420px;"></div>
-	  <script>
-	  function initMap() {
-		var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-		var mapOptions = {
-		  zoom: 4,
-		  center: myLatlng
-		}
-		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-		var image = document.createElement("img");
-		image.src = "img/banner/AnshPost.png";
-	  //  var image = "public/img/AnshPost.png";
-
-	  //  var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-		var marker = new google.maps.Marker({
-		  position: myLatlng,
-		  map: map,
-		  icon: image
-		});
-
-		// To add the marker to the map, call setMap();
-		marker.setMap(map);
-
-	//    marker.setMap(null)
-
-
-	}
-
-	  </script>
-
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCq79w6dxRnDoHKnNvj5A0dYggMZ2Ah9pU&callback=initMap"
-	  type="text/javascript"></script>
-	</div>
-	</section>
-	<style>
-		.card {
-			margin: 20px;
-			padding: 20px;
-			box-shadow: 0 0 10px #444;
-			padding-bottom: 40px;
-		}
-		dark {
-			color: #0F0F0F;
-		}
-	</style>
-		<div id="listings" class="container">
-			<a href="create-listing.html" class="button button-header" style="background-color: #21146a;">Create Listing</a>
-		</div>
-	
+	  <div class="container">
+		  <form action="#" class="form-contact contact_form" id="contactForm" novalidate="novalidate">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="form-group">
+                  <input class="form-control" name="Username" id="Username" type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" name="Email" id="Email" type="email" placeholder="Enter email address">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" name="Phone" id="Phone" type="text" placeholder="Enter phone number">
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="form-group">
+                    <textarea class="form-control different-control w-100" name="Desc" id="Desc" cols="30" rows="5" placeholder="Enter Description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-group text-center text-md-right mt-3">
+              <button type="submit" class="button button-contactForm">Create Listing</button>
+            </div>
+          </form>
+	  </div>
+    <!--================ Hero sm Banner end =================-->
+	</main>
+    
 	<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
 	<script src="js/database-init.js"></script>
 	<script>
 	var database = firebase.database();
-	database.ref("test").set({value: "notthat"});
-	var snap = database.ref("Listings").limitToFirst(25);
-	var listings = document.getElementById("listings");
-	snap.once('value', function(snapshot) {
-	  	snapshot.forEach(function(childSnapshot) {
-			var childKey = childSnapshot.key;
-			var childData = childSnapshot.val();
-			
-			var card = document.createElement("div");
-			card.classList.add("card");
-			
-			var titleText = document.createElement("h2");
-			titleText.innerHTML = childData["Username"];
-			
-			var description = document.createElement("p");
-			description.innerHTML = "<dark>" + childData["Desc"] + "</dark>";
-			
-			var email = document.createElement("p");
-			email.innerHTML = "<dark>Email:  </dark>" + childData["Email"];
-			
-			var phone = document.createElement("p");
-			phone.innerHTML = "<dark>Phone Number:  </dark>" + childData["Phone"];
-			
-			
-			card.appendChild(titleText);
-			card.appendChild(description);
-			card.appendChild(email);
-			card.appendChild(phone);
-			listings.appendChild(card);
-		});
+	var user = firebase.auth().currentUser;
+	var name, email, photoUrl, uid, emailVerified;
+	firebase.auth().onAuthStateChanged(user => {
+	  if (user) {
+		name = user.displayName;
+		email = user.email;
+		photoUrl = user.photoURL;
+		emailVerified = user.emailVerified;
+		uid = user.uid;
+		var userRef = database.ref('users/' + uid);
+			database.ref('users/' + uid).set({
+				username: name,
+				email: email,
+				photoLoc: photoUrl
+			});
+		  document.getElementById("loginButton").href="logout.html";
+		  document.getElementById("loginButton").innerHTML = "Logout";
+	  } else {
+		  window.location.href="index.html";
+	  }
 	});
 	</script>
+
   <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
