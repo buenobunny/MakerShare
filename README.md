@@ -1,5 +1,12 @@
 # CalHacks2020
 
+## Project Accomplishments and Intro Description
+
+- Winner of MLH's Best UI Automation Hack prize at CalHacks Hack:Now (UC Berkeley's annual Hackathon; over 2000 competitors)
+- A platform for COVID essential workers to request supplies from community members, and for community members to post supplies to give to COVID essential workers
+- Utilized HTML/CSS/JavaScript/BootStrap for front-end development; Google Maps API and Firebase for backend development
+- DevPost Page: https://devpost.com/software/makershare
+
 ## Inspiration
 
 Our team has family members and friends who are working as essential workers. Many of them do not have proper safety equipment like masks and cleaning supplies. As many community members are making their own DIY masks and have surplus cleaning/medical supplies, we wanted to create a way where we can connect essential workers lacking medical supplies to generous community members who can make or already have these supplies.
